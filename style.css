@@ -23,6 +23,10 @@ html * {
     box-sizing: border-box;
 }
 
+#hidden-go-back {
+    display: none!important;
+}
+
 .header-container {
     height: 10%;
     display: flex;
@@ -39,13 +43,17 @@ html * {
     align-items: center;
 }
 
+.nav-button-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
 .nav-button {
     border: 2px solid black;
-    padding: 0.25rem;
-    width: 3rem;
     text-align: center;
     font-size: 1.5rem;
-    margin-right: 0.5rem;
+    padding: 0.25rem 0.5rem;
     font-weight: bold;
     background-color: yellow;
     text-transform: uppercase;
@@ -131,20 +139,43 @@ html * {
     font-style: italic;
 }
 
+.next-button p {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
 .next-button:hover {
     animation: next-hover 0.7s infinite;
 }
 
 @keyframes next-hover {
     100% {
-        transform: translateX(15%);
+        transform: translateX(1rem);
     }
 }
 
-.next-button p {
-    position: relative;
-    margin: 0;
-    padding: 0;
+.back-button {
+    position: absolute;
+    bottom: 10%;
+    left: 0%;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 2rem;
+    background-color: Yellow;
+    padding: 0.5rem 1rem;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    animation: back-hover 0.7s infinite;
+}
+
+@keyframes back-hover {
+    100% {
+        transform: translateX(-0.5rem);
+    }
 }
 
 
@@ -245,10 +276,23 @@ html * {
     font-weight: bold;
 }
 
+.important-item {
+    color: orange;
+}
+
 
 /* page 3 */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
+#css-importance {
+    color: orange;
+    cursor: pointer
+}
+
+#css-importance:hover {
+    color: pink;
+}
+
 
 /* page 4 */
 
@@ -439,4 +483,13 @@ figure {
 
 .cube *:hover {
     filter: hue-rotate(100deg);
+}
+
+.html-example {
+    width: 100%;
+    height: 100%;
+}
+
+.tag-eg {
+    color: purple;
 }
