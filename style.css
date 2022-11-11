@@ -15,6 +15,7 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
+    background-color: lightgray;
 }
 
 html * {
@@ -22,21 +23,91 @@ html * {
     box-sizing: border-box;
 }
 
+.header-container {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.nav-bar {
+    height: 60%;
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-button {
+    border: 2px solid black;
+    padding: 0.25rem;
+    width: 3rem;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    font-weight: bold;
+    background-color: yellow;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.page-number {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    color: darkgray;
+    font-size: 1.25rem;
+    transform: translateX(-50%);
+}
+
+.nav-label {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 100px;
+    text-align: center;
+    transform: translateX(-50%);
+    color: red;
+    font-size: 1rem;
+}
+
+.nav-button:hover {
+    background-color: orange;
+}
+
+.nav-button:hover+.nav-label {
+    display: inline-block;
+}
+
 .page {
-    margin: 8px 0;
+    width: 100%;
+    height: 80%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* width: 100%; */
+}
+
+.page-wrapper {
+    position: absolute;
+    top: 0;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* width: 100%; */
+    transition: 0.5s ease-in-out;
 }
 
 .page-item {
+    position: absolute;
     width: 100%;
-    min-height: 640px;
+    height: 600px;
+    background-color: white;
 }
+
 .page-content {
     width: 100%;
     height: 100%;
@@ -49,7 +120,7 @@ html * {
     bottom: 10%;
     right: 0%;
     display: inline-block;
-    font-size: 2.5rem;
+    font-size: 2rem;
     background-color: Yellow;
     text-transform: uppercase;
     font-weight: bold;
@@ -57,6 +128,17 @@ html * {
     color: black;
     padding: 0.5rem 2rem;
     cursor: pointer;
+    font-style: italic;
+}
+
+.next-button:hover {
+    animation: next-hover 0.7s infinite;
+}
+
+@keyframes next-hover {
+    100% {
+        transform: translateX(15%);
+    }
 }
 
 .next-button p {
@@ -65,12 +147,19 @@ html * {
     padding: 0;
 }
 
+
 /* Page 1 */
+
+.centered-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .main-header {
     font-size: 5rem;
     text-align: center;
-    margin-top: 10%;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -97,38 +186,257 @@ html * {
     animation: color-animation 3s linear infinite;
 }
 
-
 @keyframes color-animation {
     0% {
         color: var(--color-1)
     }
-
     32% {
         color: var(--color-1)
     }
-
     33% {
         color: var(--color-2)
     }
-
     65% {
         color: var(--color-2)
     }
-
     66% {
         color: var(--color-3)
     }
-
     99% {
         color: var(--color-3)
     }
-
     100% {
         color: var(--color-1)
     }
 }
+
 .author {
     text-align: center;
     font-size: 3rem;
     text-transform: uppercase;
+}
+
+
+/* page 2 */
+
+.page-headers {
+    margin: 2rem 0;
+    font-size: 4rem;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.bullet-list {
+    font-size: 2rem;
+    padding-left: 3.5rem;
+    list-style: none;
+}
+
+.bullet-list li:before {
+    font-family: 'FontAwesome';
+    content: '\f105';
+    margin: 0 5px 0 -15px;
+    margin: 1rem;
+}
+
+.highlight-item {
+    color: #A961F2;
+    font-weight: bold;
+}
+
+
+/* page 3 */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
+
+/* page 4 */
+
+.tags-container {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tags-container p {
+    text-align: center;
+    font-size: 2rem;
+    color: navy;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.div-eg {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #DD4B49;
+    background-color: #ECB390;
+    text-align: center;
+}
+
+.h1-eg {
+    color: #9C1049;
+    font-size: 4rem;
+}
+
+.p-eg {
+    color: #AC7188;
+    font-size: 2rem;
+}
+
+.img-eg {
+    width: 240px;
+    height: 180px;
+}
+
+
+/* page 5 */
+
+.a-eg {
+    font-size: 3rem;
+}
+
+.ol-eg {
+    list-style-type: lower-alpha;
+}
+
+.ol-eg li,
+.ol-eg p {
+    font-size: 1.5rem;
+    color: #6C7BA1;
+}
+
+.ul-eg {
+    list-style-type: disc;
+}
+
+.ul-eg li,
+.ul-eg p {
+    font-size: 1.5rem;
+    color: #B97A95;
+}
+
+.table-eg {
+    border: 2px solid #6F2243;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.table-eg th,
+.table-eg td {
+    width: 80px;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid #6F2243;
+}
+
+.table-label {
+    width: 100%;
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+.inspect-me {
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+
+/* page 9 */
+
+.cube-eg {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.stage {
+    width: 300px;
+    height: 300px;
+    -webkit-perspective: 2000px;
+    -webkit-perspective-origin: center;
+    transform: scale(0.4);
+}
+
+.rotate {
+    -webkit-transform-style: preserve-3d;
+    -webkit-animation: rotate2 10s infinite linear;
+}
+
+figure {
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+}
+
+.cube {
+    -webkit-transform-style: preserve-3d;
+}
+
+figure {
+    -webkit-transform-origin: center;
+}
+
+.front {
+    -webkit-transform: translateZ(150px);
+    background: yellow;
+}
+
+.back {
+    -webkit-transform: rotateY(180deg) translateZ(150px);
+    background: #00f;
+}
+
+.top {
+    -webkit-transform: rotateX(90deg) translateZ(150px);
+}
+
+.bottom {
+    -webkit-transform: rotateX(-90deg) translateZ(150px);
+    background: #0ff;
+}
+
+.left {
+    -webkit-transform: rotateY(-90deg) translateZ(150px);
+    background: #0f0;
+}
+
+.right {
+    -webkit-transform: rotateY(90deg) translateZ(150px);
+    background: #f0f;
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotateY(0)
+    }
+    100% {
+        -webkit-transform: rotateY(360deg);
+    }
+}
+
+@-webkit-keyframes rotate2 {
+    0% {
+        -webkit-transform: rotatex(0)
+    }
+    100% {
+        -webkit-transform: rotatex(360deg);
+    }
+}
+
+.cube {
+    -webkit-animation: rotate 10s infinite linear;
+    transition: 0.5s linear;
+    cursor: pointer;
+}
+
+.top {
+    background: red;
+}
+
+.cube *:hover {
+    filter: hue-rotate(100deg);
 }
