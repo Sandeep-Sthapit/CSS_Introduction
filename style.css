@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Poppins&family=Source+Code+Pro:wght@500&display=swap');
 html {
     margin: 0;
     padding: 0;
@@ -21,6 +22,7 @@ body {
 html * {
     position: relative;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #hidden-go-back {
@@ -194,6 +196,7 @@ html * {
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
+    line-height: 6rem;
 }
 
 .mh-1 {
@@ -246,6 +249,23 @@ html * {
     text-align: center;
     font-size: 3rem;
     text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+}
+
+.class-link {
+    text-align: center;
+    font-size: 3rem;
+    text-transform: lowercase;
+    font-family: 'Source Code Pro', monospace;
+    color: #B584F2;
+}
+
+.hidden-item {
+    display: none !important;
+}
+
+.not-visible-item {
+    opacity: 0 !important;
 }
 
 
@@ -565,7 +585,7 @@ figure {
 #page-5 .container,
 #page-6 .container,
 #nav-2 {
-    background-color: #CDFCF6;
+    background-color: #C4D7E0;
 }
 
 #page-7 .container,
@@ -632,10 +652,24 @@ figure {
     filter: brightness(125%);
 }
 
+.practice-header {
+    margin-top: 0;
+}
+
 @media (min-width:100px) and (max-width:900px) {
     /* CSS */
-    .container.is-fluid {
-        transform: scale(0.75) translateX(-15%);
+    body {
+        width: 175%;
+        left: -15%;
+        transform: scale(0.5) translateX(-25%);
+    }
+    .resource-link>i {
+        display: none;
+    }
+    .resource-link>p {
+        padding: 0;
+        background-color: transparent;
+        color: darkgreen;
     }
     .page-headers {
         margin: 1rem 0;

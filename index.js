@@ -4,6 +4,41 @@ $(document).ready(function() {
     const queryString = window.location.search;
     let urlParams = new URLSearchParams(queryString);
     const urlPageNum = urlParams.get('page')
+    const presenter = urlParams.get('link')
+
+    console.log(presenter)
+    if (presenter == "1") {
+        $(".class-link").removeClass("hidden-item");
+        $('.intro-items').addClass("not-visible-item");
+        let presenterCnt = 1;
+        let firstNext = false;
+        $("#main-body").on("click", function() {
+            $(".intro-" + presenterCnt).removeClass("not-visible-item");
+
+            switch (presenterCnt) {
+                case 1:
+                    $(".intro-" + presenterCnt).addClass("animate__animated animate__bounceInLeft");
+                    break;
+                case 2:
+                    $(".intro-" + presenterCnt).addClass("animate__animated animate__bounceInRight");
+                    break;
+                case 3:
+                    $(".intro-" + presenterCnt).addClass("animate__animated animate__fadeInUp");
+                    break;
+                default:
+                    $(".intro-" + presenterCnt).addClass("animate__animated animate__fadeInDown");
+                    break;
+            }
+            presenterCnt += 1
+            if (!firstNext && presenterCnt > 3) {
+                presenterCnt = 3
+            }
+        })
+        $('.intro-3').on("click", function() {
+            firstNext = true;
+        })
+    }
+
     let totalPageNum = $(".page-wrapper").length
     let currentPage = 0
 
