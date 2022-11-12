@@ -36,7 +36,7 @@ html * {
 }
 
 .nav-bar {
-    height: 60%;
+    height: 80%;
     width: 60%;
     display: flex;
     justify-content: flex-start;
@@ -50,10 +50,9 @@ html * {
 }
 
 .nav-button {
-    border: 2px solid black;
     text-align: center;
     font-size: 1.5rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 1rem;
     font-weight: bold;
     background-color: yellow;
     text-transform: uppercase;
@@ -82,7 +81,7 @@ html * {
 }
 
 .nav-button:hover {
-    background-color: orange;
+    filter: brightness(95%);
 }
 
 .nav-button:hover+.nav-label {
@@ -111,6 +110,7 @@ html * {
 
 .page-item {
     position: absolute;
+    z-index: 1;
     width: 100%;
     height: 600px;
     background-color: white;
@@ -137,6 +137,7 @@ html * {
     padding: 0.5rem 2rem;
     cursor: pointer;
     font-style: italic;
+    z-index: 100;
 }
 
 .next-button p {
@@ -164,7 +165,7 @@ html * {
     font-size: 2rem;
     background-color: Yellow;
     padding: 0.5rem 1rem;
-    z-index: 5;
+    z-index: 100;
     cursor: pointer;
 }
 
@@ -492,4 +493,156 @@ figure {
 
 .tag-eg {
     color: purple;
+}
+
+.workout-eg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.workout-eg-item {
+    display: flex;
+    border-radius: 16px;
+    width: 30%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #A14A76;
+    color: white;
+    transition: 0.3s;
+}
+
+.workout-eg-item:hover {
+    transform: scale(1.05);
+}
+
+.codepen-container {
+    width: 100%;
+    height: 80%;
+    padding: 0.5rem;
+}
+
+.codepen-container>* {
+    width: 130%;
+    left: -15%;
+    transform: scale(0.75);
+}
+
+.eg-name {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+
+/* page colors */
+
+#page-1 .container,
+#page-2 .container,
+#nav-1 {
+    background-color: #FAF7F0;
+}
+
+.nav-button {
+    filter: brightness(50%);
+    color: black;
+}
+
+.nav-button.active {
+    filter: brightness(100%);
+    cursor: auto;
+}
+
+#page-1 .container,
+#page-2 .container,
+#page-3 .container,
+#nav-1 {
+    background-color: #FAF7F0;
+}
+
+#page-4 .container,
+#page-5 .container,
+#page-6 .container,
+#nav-2 {
+    background-color: #CDFCF6;
+}
+
+#page-7 .container,
+#page-8 .container,
+#page-9 .container,
+#nav-3 {
+    background-color: #FFE1E1;
+}
+
+#page-10 .container,
+#page-11 .container,
+#nav-4 {
+    background-color: #BCEAD5
+}
+
+.last-page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.end-thanks {
+    color: #3D5A80;
+    font-size: 5rem;
+}
+
+.contact-email {
+    color: #17183B;
+    font-size: 2.5rem;
+}
+
+.resource-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resource-link>p {
+    padding: 0.5rem 2.5rem;
+    transform: translateX(-1.5rem);
+    background-color: #39BA94;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.resource-icon {
+    display: inline-block;
+    background-color: white;
+    padding: 0.5rem;
+    border: 0.25rem solid #39BA94;
+    color: #39BA94;
+    font-size: 2rem;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.resource-link:hover {
+    filter: brightness(125%);
+}
+
+@media (min-width:100px) and (max-width:900px) {
+    /* CSS */
+    .container.is-fluid {
+        transform: scale(0.75) translateX(-15%);
+    }
+    .page-headers {
+        margin: 1rem 0;
+        font-size: 2.5rem;
+    }
+    .bullet-list {
+        font-size: 1.25rem;
+        padding-left: 2.5rem;
+    }
 }

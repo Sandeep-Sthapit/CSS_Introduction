@@ -16,28 +16,29 @@
 </head>
 
 <body>
-    <button id="hidden-go-back">GO BACK</button>
+    <button id="hidden-go-back">APPLY SKIN</button>
     <div class="container is-fluid">
         <div class="header-container container is-widescreen">
             <div class="nav-bar" id="nav-bar">
                 <div class="nav-button-container" id="nav-page">
-                    <div class="nav-button">
-                        <p>Introduction</p>
+                    <div class="nav-button active" id="nav-1">
+                        <p>Start</p>
                     </div>
-                    <div class="nav-button">
+                    <div class="nav-button" id="nav-2">
                         <p>HTML</p>
                     </div>
-                    <div class="nav-button">
+                    <div class="nav-button" id="nav-3">
                         <p>CSS</p>
                     </div>
-                    <div class="nav-button">
+                    <div class="nav-button" id="nav-4">
                         <p>Practice</p>
                     </div>
                 </div>
             </div>
             <div>
-                <a href="https://github.com/Sandeep-Sthapit/Introduction-to-CSS-resources" class="resource-link" target="_blank">
-                    <p>resources</p>
+                <a href="https://github.com/Sandeep-Sthapit/Introduction-to-CSS-resources/blob/main/README.md" class="resource-link" target="_blank">
+                    <i class="fa-solid fa-book-open resource-icon"></i>
+                    <p>Extra Resources</p>
                 </a>
             </div>
         </div>
@@ -54,6 +55,7 @@
                                 <span class="title-word mh-3">CSS</span>
                             </h1>
                             <h3 class="author">Sandeep Sthapit</h3>
+                            <!-- add shorterned url with page 1 -->
                         </div>
                     </div>
 
@@ -102,12 +104,12 @@
                         </ul>
                     </div>
                     <div class="next-button">
-                        <p>What does it look like?</p>
+                        <p>HTML STRUCTURE</p>
                     </div>
                     <div class="back-button">
                         <i class="fa-sharp fa-solid fa-angle-left"></i>
                     </div>
-                    <p class="page-number">1</p>
+                    <p class="page-number">2</p>
                 </div>
             </div>
             <!-- page 3  -->
@@ -132,14 +134,14 @@
                     <div class="back-button">
                         <i class="fa-sharp fa-solid fa-angle-left"></i>
                     </div>
-                    <p class="page-number">2</p>
+                    <p class="page-number">3</p>
                 </div>
             </div>
             <!-- page 4  -->
             <div class="page-wrapper">
                 <div class="box page-item container is-widescreen">
                     <div class="page-content">
-                        <iframe class="html-example" src="//jsfiddle.net/Sandeep_sthapit/fn7ea3sx/3/embedded/result,html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe></div>
+                        <iframe class="html-example" src="//jsfiddle.net/Sandeep_sthapit/fn7ea3sx/13/embedded/result,html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe></div>
                     <div class="next-button" id="next-4">
                         <p>ATTRIBUTES</p>
                     </div>
@@ -169,14 +171,14 @@
                     <div class="back-button">
                         <i class="fa-sharp fa-solid fa-angle-left"></i>
                     </div>
-                    <p class="page-number">4</p>
+                    <p class="page-number">5</p>
                 </div>
             </div>
             <!-- page 7  -->
             <div class="page-wrapper">
                 <div class="box page-item container is-widescreen">
                     <div class="page-content">
-                        <iframe class="html-example" src="//jsfiddle.net/Sandeep_sthapit/fn7ea3sx/3/embedded/result,html,css/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                        <iframe class="html-example" src="//jsfiddle.net/Sandeep_sthapit/fn7ea3sx/13/embedded/result,html,css/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
                     </div>
                     <div class="next-button" id="next-8">
                         <p>Selectors</p>
@@ -184,7 +186,7 @@
                     <div class="back-button">
                         <i class="fa-sharp fa-solid fa-angle-left"></i>
                     </div>
-                    <p class="page-number">5</p>
+                    <!-- <p class="page-number">6</p> -->
                 </div>
             </div>
             <!-- page 8  -->
@@ -196,9 +198,8 @@
                         </h1>
                         <ul class="bullet-list">
                             <li>Selectors are patterns to select one or more elements</li>
-                            <li>Can select using elements themselves, classnames, ids, or attributes.</li>
-                            <li>CSS Properties can change everything. It can change color, size, position, opacity etc.</li>
-                            <li>Can add spacing: margin, padding, border</li>
+                            <li>Elements can be selected using <span class="highlight-item">tagname, classnames, ids, or attributes</span>.</li>
+                            <li>CSS Properties can change everything. It can change <span class="highlight-item">color, size, position, opacity, margin, border,</span> etc.</li>
                         </ul>
                         <!-- INSPECT ONCE MORE, separate file or inline -->
                     </div>
@@ -254,32 +255,34 @@
                 <div class="box page-item container is-widescreen">
                     <div class="page-content">
                         <h1 class="page-headers">
-                            EXPERIMENT
+                            Practice
                         </h1>
                         <div class="workout-eg">
-                            <p>Some examples to fiddle with:</p>
-                            <a href=""><img src="" alt="">
-                                <p>Resume</p>
-                            </a>
-                            <a href=""><img src="" alt="">
-                                <p>Coffee</p>
-                            </a>
-                            <a href=""><img src="" alt="">
-                                <p>Empty</p>
-                            </a>
-                        </div>
-                        <div class="timer-clock">
-                            <input type="number" id="clock-timer"></input>
-                            <!-- clock here -->
-                        </div>
-                        <!-- cv -->
-                        <!-- animation -->
-                        <!-- empty -->
-                        <!-- put clock here -->
+                            <a href="https://codepen.io/Sandeep-777/pen/OJEpQvQ" target="_blank" class="workout-eg-item">
+                                <div class="codepen-container">
+                                    <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="result" data-user="Sandeep-777" data-slug-hash="OJEpQvQ" data-pen-title="Resume">
 
-                        <!-- cheatsheet html and css -->
-                        <!-- links to codepen -->
-                        <!-- resources -->
+                                    </p>
+                                </div>
+                                <p class="eg-name">Resume</p>
+                            </a>
+                            <a href="https://codepen.io/Sandeep-777/pen/eYKvMgZ" target="_blank" class="workout-eg-item">
+                                <div class="codepen-container">
+                                    <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="result" data-user="Sandeep-777" data-slug-hash="eYKvMgZ" data-pen-title="Resume">
+
+                                    </p>
+                                </div>
+                                <p class="eg-name">COFFEE</p>
+                            </a>
+                            <a href="https://codepen.io/Sandeep-777/pen/KKemaBw" target="_blank" class="workout-eg-item">
+                                <div class="codepen-container">
+                                    <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="result" data-user="Sandeep-777" data-slug-hash="KKemaBw" data-pen-title="Resume">
+
+                                    </p>
+                                </div>
+                                <p class="eg-name">BLANK</p>
+                            </a>
+                        </div>
                     </div>
                     <div class="next-button" id="next-10">
                         <p>NEXT</p>
@@ -294,9 +297,12 @@
             <div class="page-wrapper">
                 <div class="box page-item container is-widescreen">
                     <div class="page-content">
-                        <h1 class="page-headers">
-                            THANK YOU
-                        </h1>
+                        <div class="last-page">
+                            <h1 class="end-thanks">
+                                QUESTIONS?
+                            </h1>
+                            <p class="contact-email">ssthapi@ncsu.edu</p>
+                        </div>
                         <!-- WASHINGTON POST -->
                     </div>
                     <div class="back-button">
