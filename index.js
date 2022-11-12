@@ -4,40 +4,10 @@ $(document).ready(function() {
     const queryString = window.location.search;
     let urlParams = new URLSearchParams(queryString);
     const urlPageNum = urlParams.get('page')
+    let addParam = ""
     const presenter = urlParams.get('link')
 
-    console.log(presenter)
-    if (presenter == "1") {
-        $(".class-link").removeClass("hidden-item");
-        $('.intro-items').addClass("not-visible-item");
-        let presenterCnt = 1;
-        let firstNext = false;
-        $("#main-body").on("click", function() {
-            $(".intro-" + presenterCnt).removeClass("not-visible-item");
 
-            switch (presenterCnt) {
-                case 1:
-                    $(".intro-" + presenterCnt).addClass("animate__animated animate__bounceInLeft");
-                    break;
-                case 2:
-                    $(".intro-" + presenterCnt).addClass("animate__animated animate__bounceInRight");
-                    break;
-                case 3:
-                    $(".intro-" + presenterCnt).addClass("animate__animated animate__fadeInUp");
-                    break;
-                default:
-                    $(".intro-" + presenterCnt).addClass("animate__animated animate__fadeInDown");
-                    break;
-            }
-            presenterCnt += 1
-            if (!firstNext && presenterCnt > 3) {
-                presenterCnt = 3
-            }
-        })
-        $('.intro-3').on("click", function() {
-            firstNext = true;
-        })
-    }
 
     let totalPageNum = $(".page-wrapper").length
     let currentPage = 0
@@ -47,6 +17,52 @@ $(document).ready(function() {
         if (urlPageNum >= 0 && urlPageNum < totalPageNum) {
             currentPage = parseInt(urlPageNum);
         }
+    }
+
+    console.log(presenter)
+    if (presenter == "1") {
+        addParam = "&link=1";
+        if (currentPage == 0) {
+            $(".class-link").removeClass("hidden-item");
+            $('.intro-items').addClass("not-visible-item");
+            let presenterCnt = 1;
+            let firstNext = false;
+            $("#main-body").on("click", function() {
+                $(".intro-" + presenterCnt).removeClass("not-visible-item");
+
+                switch (presenterCnt) {
+                    case 1:
+                        $(".intro-" + presenterCnt).addClass("animate__animated animate__bounceInLeft");
+                        break;
+                    case 2:
+                        $(".intro-" + presenterCnt).addClass("animate__animated animate__bounceInRight");
+                        break;
+                    case 3:
+                        $(".intro-" + presenterCnt).addClass("animate__animated animate__fadeInUp");
+                        break;
+                    default:
+                        $(".intro-" + presenterCnt).addClass("animate__animated animate__fadeInDown");
+                        break;
+                }
+                presenterCnt += 1
+                if (!firstNext && presenterCnt > 3) {
+                    presenterCnt = 3
+                }
+            })
+            $('.intro-3').on("click", function() {
+                firstNext = true;
+                $(".class-link-3").removeClass("hidden-item");
+                $(".class-link-3").addClass("animate__animated animate__fadeInUp");
+            })
+
+        } else {
+            $(".class-link-3").removeClass("hidden-item");
+            $(".class-link-3").addClass("not-visible-item");
+        }
+
+        $(".class-link-3").on("click", function() {
+            $(".class-link-3").toggleClass("not-visible-item");
+        })
     }
 
     let pageCnt = 1
@@ -93,7 +109,7 @@ $(document).ready(function() {
         $('*').removeAttr('style');
     })
     $("#hidden-go-back").on("click", function() {
-        window.location.href = url + "?page=2";
+        window.location.href = url + "?page=2" + addParam;
     })
 
 
